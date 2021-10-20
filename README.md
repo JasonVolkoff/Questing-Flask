@@ -9,7 +9,7 @@
 
 -   Downloaded [PostgresSQL](https://www.postgresql.org/download/windows/) (here's a great [guide](https://www.postgresqltutorial.com/install-postgresql/) to setting it up)
 -   Verify postgres is successfully installed by typing `psql` in cmd terminal (not powershell or bash/linux)
--   login to postgres on the command line (typically `psql -u root` or `psql -u postgres`), then enter the password used in initial setup
+-   login to postgres on the command line (typically `psql -u root` or `psql -U postgres`), then enter the password used in initial setup
 -   Once inside the PSQL shell, create a new database:
     `CREATE DATABASE questingdb;`
 -   note: you can name it whatever you want; it doesn't have to be "questdb"
@@ -28,6 +28,8 @@
 -   Next install requirements:
     `pip install -r requirements.txt`
 -   Last, navigate to `.\backend\` and create your `local_settings.py` file. Within that file, paste the following code:
+-   For Dustins PC
+    `export PATH="C:\Program Files\PostgreSQL\13\bin:$PATH"`
 
 ```
 POSTGRES_USER = ''
