@@ -43,3 +43,48 @@ POSTGRES_USER = 'postgres'
 POSTGRES_PASSWORD = 'password'
 POSTGRES_DATABASE_NAME = 'questingdb'
 ```
+
+# Current File Structure WIP:
+
+```
+├───frontend (Everything Front-End Related including static files)
+│   app.py
+│   local_settings.py (Settings extension *DO NOT INCLUDE IN VERSION CONTROL*)
+│   settings.py
+│   urls.py (Base URL Routing *can extend routes within other apps*)
+│
+├───migrations (Auto-generated with Flask-Migrate to allow migration commits to version control)
+│   │   alembic.ini
+│   │   env.py
+│   │   README
+│   │   script.py.mako
+│   │
+│   ├───versions
+│   └───__pycache__ (NOT COMMITTED TO VERSION CONTROL)
+│           env.cpython-39.pyc
+│
+├───models (A single file per model; file should also include serializer object)
+│   │   user.py
+│   │   __init__.py
+│   │
+│   └───__pycache__ (NOT COMMITTED TO VERSION CONTROL)
+│           user.cpython-39.pyc
+│           __init__.cpython-39.pyc
+│
+├───utils (Utility functions and classes not belonging to a specific view/model)
+│       __init__.py
+│
+├───views (Views function logic goes here)
+│   │   test_db.py
+│   │   __init__.py
+│   │
+│   └───__pycache__ (NOT COMMITTED TO VERSION CONTROL)
+│           test_db.cpython-39.pyc
+│           __init__.cpython-39.pyc
+│
+└───__pycache__ (NOT COMMITTED TO VERSION CONTROL)
+        app.cpython-39.pyc
+        local_settings.cpython-39.pyc
+        settings.cpython-39.pyc
+        urls.cpython-39.pyc
+```
