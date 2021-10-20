@@ -11,7 +11,7 @@
 -   Verify postgres is successfully installed by typing `psql` in cmd terminal (not powershell or bash/linux)
 -   login to postgres on the command line (typically `psql -u root` or `psql -u postgres`), then enter the password used in initial setup
 -   Once inside the PSQL shell, create a new database:
-    `CREATE DATABASE questdb;`
+    `CREATE DATABASE questingdb;`
 -   note: you can name it whatever you want; it doesn't have to be "questdb"
 -   note2: don't forget the `;` at the end.
 -   quit the psql terminal with `\q`
@@ -33,6 +33,7 @@
 POSTGRES_USER = ''
 POSTGRES_PASSWORD = ''
 POSTGRES_DATABASE_NAME = ''
+DEVELOPMENT = True
 ```
 
 -   You'll need to insert the appropriate strings that you used to setup postgres; for example:
@@ -40,5 +41,5 @@ POSTGRES_DATABASE_NAME = ''
 ```
 POSTGRES_USER = 'postgres'
 POSTGRES_PASSWORD = 'password'
-POSTGRES_DATABASE_NAME = 'questdb'
+POSTGRES_DATABASE_NAME = 'questingdb'
 ```
