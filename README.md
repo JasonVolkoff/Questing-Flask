@@ -115,6 +115,14 @@ Use the following workflow to prevent that:
     8. Accept merge request and merge on github.com
     9. Update relevant Trello card
     10. Notify the group of a merge on discord (so that everyone can do a `git pull` and `git merge master` to update whatever they're working on)
+-   Helpful GIT commands:
+    -   To search for a branch by name: `git branch --all | grep "Hotfix"` will output a list of all branches with "Hotfix" in the name.
+    -   To temporarally stash your current SAVED but not ADDED OR COMMITTED changes (so if you want to switch to another branch for w/e reason)
+        `git stash`
+        -   Note: this will clear your current branch of ALL saved work and take you back to your PREVIOUS commit.
+        -   To reapply your saved work to your working directory: `git stash apply` (essentially undos `git stash`)
+    -   If you accidently `git add somefile.py` you can remove it from staging (and keep your saved changes) with `git rm somefile.py`
+    -   To start fresh and rewrite/delete changes to your last commit: `git reset --hard`
 
 TODO: Create a development branch to be used on a staging server -> Update git workflow to incorporate development branch.
 
