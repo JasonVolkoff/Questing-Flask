@@ -7,7 +7,7 @@
 
 # Postgres Setup:
 
--   Downloaded [PostgresSQL](https://www.postgresql.org/download/windows/) (here's a great [guide](https://www.postgresqltutorial.com/install-postgresql/) to setting it up).
+-   Download [PostgresSQL](https://www.postgresql.org/download/windows/) (here's a great [guide](https://www.postgresqltutorial.com/install-postgresql/) to setting it up).
 -   Verify postgres is successfully installed by typing `psql` in cmd terminal (not powershell or bash/linux).
     -   If you get an error after trying the `psql` command, you'll likely need to add your PostgreSQL bin folder to your system PATH environment variable.
     -   If the above does not work, try `export PATH="C:\Program Files\PostgreSQL\13\bin:$PATH"` in your terminal (replace the path with whatever the path destination is for your PC)
@@ -92,7 +92,7 @@ Use the following workflow to prevent that:
     7. Optional (But HIGHLY recommended): Ping another developer the URL to your PR to review before merging.
     8. Accept merge request and merge on github.com
     9. Update relevant Trello card
-    10. Notify the group of a merge on discord (so that everyone can do a `git pull` and `git merge master` to update whatever they're working on)\
+    10. Notify the group of a merge on discord (so that everyone can do a `git pull` and `git merge master` to update whatever they're working on)
 
 TODO: Create a development branch to be used on a staging server -> Update git workflow to incorporate development branch.
 
