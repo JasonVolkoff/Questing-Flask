@@ -46,6 +46,19 @@ POSTGRES_PASSWORD = 'password'
 POSTGRES_DATABASE_NAME = 'questingdb'
 ```
 
+# Setting up local database
+
+Questing uses PostgreSQL with Flask-Migrate to handle the migration repository. You may be familiar with
+`flask run` as a sub-command for flask. `flask db` is a sub-command for Flask-Migrate.
+
+-   When first pulling the repo, you'll have the migration scripts already present in `./backend/migrations/alembic.ini`
+-   This script is used to create the database tables which are reflected by the models in `./backend/models`
+-   You'll next want to run this script using `flask db upgrade` to create the tables in your local DB.
+-   If you pull a branch from remote with new/update models, you'll run the update command again.
+-   If you make changes to any of the models, before pushing to remote you _must_ run the following command:
+    `flask db migrate`
+    -   This will generate the necessary scripts in your `alembic.ini` file so that everyone's local database will be the same.
+
 # GIT Workflow
 
 The most up-to-date and stable branch should _always_ be Master. _Never_ commit directly to master, only approved/reviewed merges.
@@ -83,6 +96,10 @@ Use the following workflow to prevent that:
 
 -   Always `git pull master` before checking out to a new branch
 -   Before setting up a pull request to master remotely, always follow the following steps:
+    NOTE - BEFORE PROCEEEDING FURTHER:
+    If you made _any_ changes to database models (i.e. adding models, adding/changing fields to models, etc) you must first
+    update the migration scripts in `./backend/migrations/alembic.ini`. To do this, run `flask db migrate` followed by `flask db upgrade`.
+    This will update the scripts so that anyone else who later pulls the branch from remote can simply `flask db upgrade`.
     1. Switch to your current feature/bug/hotfix branch you'd like to push.
     2. `git pull` to update your local repository.
     3. `git merge master` to integrate any changes that may have been merged to master while you were working on your branch.
