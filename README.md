@@ -101,9 +101,14 @@ Use the following workflow to prevent that:
     update the migration scripts in `./backend/migrations/alembic.ini`. To do this, run `flask db migrate` followed by `flask db upgrade`.
     This will update the scripts so that anyone else who later pulls the branch from remote can simply `flask db upgrade`.
     1. Switch to your current feature/bug/hotfix branch you'd like to push.
-    2. `git pull` to update your local repository.
+        - If you haven't already, make sure you `git status` to see whether or not you've added & committed your changes.
+        - If you still need to add, use `git add NameOfFileOrFolder` all of the files/folders you want to add.
+        - If you still need to commit, us `git commit -m "Description of whatever you did here"`
+    2. `git pull` to update your local repository (we use this mainly to update your local master repo).
     3. `git merge master` to integrate any changes that may have been merged to master while you were working on your branch.
     4. `git push -u origin The-Name-Of-Your-Current-Branch` to push your current branch to the remote repository.
+        - For a shortcut, if you globally configure git to always push your current branch: `git config --global push.default current`
+          then you can simply `git push` to push whatever branch you're currently on.
     5. Head over to the Questing repository on github.com
     6. Create a PR to merge your branch into master.
     7. Optional (But HIGHLY recommended): Ping another developer the URL to your PR to review before merging.
